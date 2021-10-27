@@ -2,7 +2,7 @@
   "name": "world-pollution",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Gabriel Medeiros <51962320+gjmedeiros@users.noreply.github.com>",
+  "author": "Gabriel Medeiros <gabriel.m.goncalves@outlook.com>",
   "license": "MIT",
   "scripts": {
     "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts"
@@ -24,6 +24,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "winston": "^3.3.3"
   }
 }
