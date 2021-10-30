@@ -1,4 +1,0 @@
-# Funcionalidades
-
-# Get
-- busca cidade
