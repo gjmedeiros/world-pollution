@@ -6,6 +6,9 @@
 # Clone este repositório
 $ git clone https://github.com/gjmedeiros/world-pollution
 
+# Acesse o repositório
+$ cd world-pollution/server
+
 # Instale as dependências
 $ yarn install
 
@@ -13,4 +16,22 @@ $ yarn install
 $ yarn start
 
 # rodando na porta 3333
+```
+
+### Mobile
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/gjmedeiros/my-teachers
+
+# Acesse o repositório
+$ cd world-pollution/server
+
+# Instale as dependências
+$ yarn install
+
+# Execute a aplicação
+$ expo start
+
+# O Expo abrirá uma nova janela no navegador; escaneie o qrcode no terminal ou na página aberta pelo Expo
 ```
