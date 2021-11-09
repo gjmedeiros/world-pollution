@@ -1,5 +1,8 @@
 import React from 'react';
-import { Image, Text, TextInput, TouchableHighlight, View } from 'react-native';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 import styles from './styles';
 
@@ -7,6 +10,12 @@ import landingImg from '../../assets/images/landing.png';
 import gpsImg from '../../assets/images/icons/gps.png';
 
 function Landing() {
+  const { navigate } = useNavigation<NativeStackNavigationProp<any, any>>();
+
+  function ToCurrentLocation() {
+    navigate('CurrentLocation');
+  }
+
   return (
     <View style={styles.container}>
       <Image source={landingImg} style={styles.banner} />
@@ -21,15 +30,15 @@ function Landing() {
           style={styles.textInput}
           placeholder="Qual sua localização ?"
         />
-        <TouchableHighlight style={styles.buttonGps}>
+        <RectButton style={styles.buttonGps}>
           <Image source={gpsImg} />
-        </TouchableHighlight>
+        </RectButton>
       </View>
 
       <View style={styles.buttonContainerSearch}>
-        <TouchableHighlight style={styles.buttonSearch}>
+        <RectButton onPress={ToCurrentLocation} style={styles.buttonSearch}>
           <Text style={styles.buttonText}>Buscar</Text>
-        </TouchableHighlight>
+        </RectButton>
       </View>
     </View>
   );
