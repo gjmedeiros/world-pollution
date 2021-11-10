@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
-import { RectButton } from 'react-native-gesture-handler';
+import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 
 import styles from './styles';
 
@@ -12,7 +12,15 @@ import gpsImg from '../../assets/images/icons/gps.png';
 function Landing() {
   const { navigate } = useNavigation<NativeStackNavigationProp<any, any>>();
 
+  const [location, setLocation] = useState('');
+
   function ToCurrentLocation() {
+    // axios.get('//', {
+    //   params: {
+    //     setLocation,
+    //   },
+    // });
+
     navigate('CurrentLocation');
   }
 
@@ -28,11 +36,12 @@ function Landing() {
       <View style={styles.buttonContainerGps}>
         <TextInput
           style={styles.textInput}
+          value={location}
           placeholder="Qual sua localização ?"
         />
-        <RectButton style={styles.buttonGps}>
+        <BorderlessButton style={styles.buttonGps}>
           <Image source={gpsImg} />
-        </RectButton>
+        </BorderlessButton>
       </View>
 
       <View style={styles.buttonContainerSearch}>

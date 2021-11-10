@@ -4,24 +4,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#7ED957',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 40,
   },
 
   boxContainer: {
-    width: '70%',
+    backgroundColor: '#009966',
+    borderWidth: 1,
+    borderColor: '#009966',
+    borderRadius: 8,
+    marginBottom: 16,
+    overflow: 'hidden',
+  },
+
+  info: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#009966',
-    borderRadius: 10,
   },
 
   textAQI: {
     fontFamily: 'Poppins_600SemiBold',
     fontSize: 90,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 
   textLevel: {

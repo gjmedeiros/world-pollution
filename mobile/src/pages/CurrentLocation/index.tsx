@@ -1,14 +1,19 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
+import PageHeader from '../../components/PageHeader';
+
 import styles from './styles';
 
 function CurrentLocation() {
   return (
     <View style={styles.container}>
+      <PageHeader />
       <View style={styles.boxContainer}>
-        <Text style={styles.textAQI}>47</Text>
-        <Text style={styles.textLevel}>Good</Text>
+        <View style={styles.info}>
+          <Text style={styles.textAQI}>47</Text>
+          <Text style={styles.textLevel}>Good</Text>
+        </View>
       </View>
 
       <Text style={styles.textStatement}>
