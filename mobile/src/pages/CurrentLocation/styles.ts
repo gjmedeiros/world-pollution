@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     margin: 20,
     lineHeight: 24,
-    color: '#FFF',
+    color: '#000',
     textAlign: 'justify',
   },
 });

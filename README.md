@@ -22,7 +22,7 @@ $ yarn start
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/gjmedeiros/my-teachers
+$ git clone https://github.com/gjmedeiros/world-pollution
 
 # Acesse o repositório
 $ cd world-pollution/server
