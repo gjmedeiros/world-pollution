@@ -22,7 +22,7 @@ $ yarn start
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/gjmedeiros/my-teachers
+$ git clone https://github.com/gjmedeiros/world-pollution
 
 # Acesse o repositório
 $ cd world-pollution/server
@@ -34,4 +34,7 @@ $ yarn install
 $ expo start
 
 # O Expo abrirá uma nova janela no navegador; escaneie o qrcode no terminal ou na página aberta pelo Expo
+
+# Caso tenha problema com as fontes, execute:
+$ expo install expo-font @expo-google-fonts/archivo @expo-google-fonts/poppins
 ```

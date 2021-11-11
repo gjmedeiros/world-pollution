@@ -8,12 +8,12 @@ export default class SearchLocationController {
     logger.info('Iniciando Busca por Localidade');
 
     const { token } = request.headers;
-    const { location } = request.body;
+    const { latitude, longitude } = request.query;
 
     try {
       const { data } = await api.get('', {
         params: {
-          latlng: location,
+          latlng: latitude + ', ' + longitude,
           key: token,
         },
       });

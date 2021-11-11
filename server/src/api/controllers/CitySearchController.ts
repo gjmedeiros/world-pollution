@@ -8,7 +8,7 @@ export default class CitySearchController {
     logger.info('Iniciando Busca por Cidade');
 
     const { token } = request.headers;
-    const { city } = request.body;
+    const { city } = request.query;
 
     try {
       const { data } = await api.get(`/feed/${city}/`, {
