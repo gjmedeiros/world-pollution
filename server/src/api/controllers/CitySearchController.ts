@@ -17,16 +17,19 @@ export default class CitySearchController {
         },
       });
 
+      const infoPollution = data.data.aqi;
+
       logger.info(
-        'Response - CitySearchController.searchCity' + JSON.stringify(data),
+        'Response - CitySearchController.searchCity - \n' +
+          JSON.stringify(infoPollution),
       );
 
-      return response.status(200).send({ data });
+      return response.status(200).json(infoPollution);
     } catch (error) {
       logger.error('' + JSON.stringify(error));
 
       return response.status(500).json({
-        Error: 'Error ao executar serviço',
+        Error: 'Error ao executar serviço - \n',
         StatusCode: response.statusCode,
       });
     }

@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Landing from '../pages/Landing';
-import CurrentLocation from '../pages/CurrentLocation';
+import PollutionInfo from '../pages/PollutionInfo';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -12,7 +12,7 @@ function AppStack() {
     <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false }}>
         <Screen name="Landing" component={Landing} />
-        <Screen name="CurrentLocation" component={CurrentLocation} />
+        <Screen name="PollutionInfo" component={PollutionInfo} />
       </Navigator>
     </NavigationContainer>
   );

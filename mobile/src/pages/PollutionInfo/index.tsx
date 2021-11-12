@@ -1,17 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 import PageHeader from '../../components/PageHeader';
+import api from '../../services/api';
 
 import styles from './styles';
 
-function CurrentLocation() {
+function PollutionInfo() {
+  const [infoAqi, setInfoAqi] = useState(0);
+
+  useEffect(() => {
+    api
+      .get('/searchCity', {
+        params: {},
+      })
+      .then(response => {
+        const aqi = response.data;
+
+        setInfoAqi(aqi);
+      });
+  });
+
   return (
     <View style={styles.container}>
       <PageHeader />
       <View style={styles.boxContainer}>
         <View style={styles.info}>
-          <Text style={styles.textAQI}>47</Text>
+          <Text style={styles.textAQI}>{infoAqi}</Text>
           <Text style={styles.textLevel}>Good</Text>
         </View>
       </View>
@@ -24,4 +41,4 @@ function CurrentLocation() {
   );
 }
 
-export default CurrentLocation;
+export default PollutionInfo;
