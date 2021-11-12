@@ -52,7 +52,9 @@ function Landing() {
   }
 
   function ToPollutionInfo() {
-    navigate('PollutionInfo', {});
+    navigate('PollutionInfo', {
+      city: currentCity,
+    });
   }
 
   return (

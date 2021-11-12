@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../routes/AppStack';
+import { NavigatorScreenParams } from '@react-navigation/native';
 
 import PageHeader from '../../components/PageHeader';
 import api from '../../services/api';
 
 import styles from './styles';
 
-function PollutionInfo() {
+type Props = NativeStackScreenProps<RootStackParamList, 'PollutionInfo'>;
+
+function PollutionInfo({ navigation, route }: Props) {
   const [infoAqi, setInfoAqi] = useState(0);
+
+  const teste = route.params;
+  console.log(teste);
 
   useEffect(() => {
     api
