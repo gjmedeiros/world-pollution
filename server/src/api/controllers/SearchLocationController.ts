@@ -18,17 +18,19 @@ export default class SearchLocationController {
         },
       });
 
+      const local = data.results[0].address_components[4].long_name;
+
       logger.info(
-        'Response - SearchLocationController.searchLocation ' +
-          JSON.stringify(data),
+        'Response - SearchLocationController.searchLocation - \n ' +
+          JSON.stringify(local),
       );
 
-      return response.status(200).send(data);
+      return response.status(200).json(local);
     } catch (error) {
       logger.error('' + JSON.stringify(error));
 
       return response.status(500).json({
-        Error: 'Error ao executar serviço',
+        Error: 'Error ao executar serviço - \n',
         StatusCode: response.statusCode,
       });
     }
