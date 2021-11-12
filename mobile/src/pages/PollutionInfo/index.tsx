@@ -14,13 +14,15 @@ type Props = NativeStackScreenProps<RootStackParamList, 'PollutionInfo'>;
 function PollutionInfo({ navigation, route }: Props) {
   const [infoAqi, setInfoAqi] = useState(0);
 
-  const teste = route.params;
-  console.log(teste);
-
   useEffect(() => {
     api
       .get('/searchCity', {
-        params: {},
+        headers: {
+          token: 'c6088ab502ee35bdc85e921e2c5fe019cfc5b15a',
+        },
+        params: {
+          city: route.params.city,
+        },
       })
       .then(response => {
         const aqi = response.data;

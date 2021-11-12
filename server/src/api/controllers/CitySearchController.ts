@@ -10,8 +10,13 @@ export default class CitySearchController {
     const { token } = request.headers;
     const { city } = request.query;
 
+    const cityString = city as string;
+    const citySemAcento = cityString
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+
     try {
-      const { data } = await api.get(`/feed/${city}/`, {
+      const { data } = await api.get(`/feed/${citySemAcento}/`, {
         params: {
           token,
         },
